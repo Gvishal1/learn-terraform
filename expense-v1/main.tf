@@ -26,7 +26,7 @@ resource "aws_instance" "backend" {
   }
 }
 
-resource "aws_route53_record" "frontend" {
+resource "aws_route53_record" "backend" {
   zone_id = z
   name    = "backend.rdevopsb73.online"
   type    = "A"
