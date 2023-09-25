@@ -17,3 +17,6 @@ output "fruit" {
   value = var.fruit
 }
 
+output "first_fruit" {
+  value = var.fruit[0]
+}
