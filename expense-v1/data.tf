@@ -13,5 +13,5 @@ data "aws_route53_zone" "zone" {
 }
 
 variable "zone_id" {
-  default = "rdevopsb72.online"
+  default = "rdevopsb73.online"
 }
