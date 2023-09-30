@@ -3,12 +3,12 @@ variable "fruit" {
 }
 
 variable "fruits" {
-  default = [ "apple", "banana" ]
+  default = ["apple", "banana"]
 }
 
 variable "fruit_price" {
   default = {
-    apple = 10
+    apple  = 10
     banana = 20
   }
 }

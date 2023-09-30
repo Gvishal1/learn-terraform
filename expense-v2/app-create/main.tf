@@ -1,6 +1,6 @@
 resource "aws_instance" "instance" {
-  ami           = local.ami
-  instance_type = "t3.micro"
+  ami                    = local.ami
+  instance_type          = "t3.micro"
   vpc_security_group_ids = [data.aws_security_group.sg.id]
 
   tags = {
@@ -14,7 +14,7 @@ resource "aws_route53_record" "record" {
   name    = "${var.component}.${var.zone_id}"
   type    = "A"
   ttl     = 30
-  records = [ aws_instance.instance.private_ip ]
+  records = [aws_instance.instance.private_ip]
 }
 
 resource "null_resource" "ansible" {

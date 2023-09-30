@@ -1,6 +1,6 @@
 module "test" {
   source = "./local-module"
-  input = var.input
+  input  = var.input
 }
 
 variable "input" {

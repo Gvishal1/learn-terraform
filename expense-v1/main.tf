@@ -1,6 +1,6 @@
 resource "aws_instance" "frontend" {
-  ami           = local.ami
-  instance_type = "t3.micro"
+  ami                    = local.ami
+  instance_type          = "t3.micro"
   vpc_security_group_ids = [data.aws_security_group.sg.id]
 
   tags = {
@@ -14,7 +14,7 @@ resource "aws_route53_record" "frontend" {
   name    = "frontend.${var.zone_id}"
   type    = "A"
   ttl     = 30
-  records = [ aws_instance.frontend.private_ip ]
+  records = [aws_instance.frontend.private_ip]
 }
 
 resource "null_resource" "frontend" {
@@ -31,8 +31,8 @@ EOF
 }
 
 resource "aws_instance" "backend" {
-  ami           = local.ami
-  instance_type = "t3.micro"
+  ami                    = local.ami
+  instance_type          = "t3.micro"
   vpc_security_group_ids = [data.aws_security_group.sg.id]
 
   tags = {
@@ -45,7 +45,7 @@ resource "aws_route53_record" "backend" {
   name    = "backend.${var.zone_id}"
   type    = "A"
   ttl     = 30
-  records = [ aws_instance.backend.private_ip ]
+  records = [aws_instance.backend.private_ip]
 }
 
 resource "null_resource" "backend" {
@@ -62,8 +62,8 @@ EOF
 
 
 resource "aws_instance" "mysql" {
-  ami           = local.ami
-  instance_type = "t3.micro"
+  ami                    = local.ami
+  instance_type          = "t3.micro"
   vpc_security_group_ids = [data.aws_security_group.sg.id]
 
   tags = {
@@ -76,7 +76,7 @@ resource "aws_route53_record" "mysql" {
   name    = "mysql.${var.zone_id}"
   type    = "A"
   ttl     = 30
-  records = [ aws_instance.mysql.private_ip ]
+  records = [aws_instance.mysql.private_ip]
 }
 
 resource "null_resource" "mysql" {
