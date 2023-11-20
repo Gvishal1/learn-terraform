@@ -8,12 +8,12 @@ resource "null_resource" "null" {
 variable "fruits" {
   default = {
     apple = {
-      name = "Apple"
+      name  = "Apple"
       count = 100
     }
 
     banana = {
-      name = "Banana"
+      name  = "Banana"
       count = 20
     }
 
